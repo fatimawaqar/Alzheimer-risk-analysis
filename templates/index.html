@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alzheimer Risk Screening</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">🧠 NeuroAI</div>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/alzheimer-risk">Screening</a></li>
+        <li><a href="/about">About</a></li>
+    </ul>
+</nav>
+
+<div class="card">
+    <h2>Alzheimer Risk Screening</h2>
+
+    {% if result %}
+        <div class="result {{ risk|lower }}">
+            <h3>{{ risk }} Risk Detected</h3>
+        </div>
+    {% endif %}
+
+    <form method="POST">
+        <label>Age</label>
+        <input type="number" name="age" required>
+
+        <label>Family History</label>
+        <select name="family_history">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <label>Memory Loss</label>
+        <select name="memory_loss">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <label>Confusion in Daily Tasks</label>
+        <select name="confusion">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <label>Cognitive Score (0-30)</label>
+        <input type="number" name="cognitive_score" min="0" max="30" required>
+
+        <label>Physical Activity</label>
+        <select name="physical_activity">
+            <option value="0">Low</option>
+            <option value="1">Medium</option>
+            <option value="2">High</option>
+        </select>
+
+        <label>Sleep Quality</label>
+        <select name="sleep_quality">
+            <option value="0">Poor</option>
+            <option value="1">Good</option>
+        </select>
+
+        <button type="submit" class="btn">Predict Risk</button>
+    </form>
+
+    <p class="note">Educational tool only. Not a medical diagnosis.</p>
+</div>
+
+</body>
+</html>
+
