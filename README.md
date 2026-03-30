@@ -45,23 +45,23 @@ Alzheimer-risk-analysis/
 
 ##  Installation & Setup
 
-### 1️ Clone the repository
+### 1️. Clone the repository
 ```bash
 git clone https://github.com/fatimawaqar/Alzheimer-risk-analysis.git
 cd Alzheimer-risk-analysis
 ```
 
-### 2️ Install dependencies
+### 2️. Install dependencies
 ```bash
 pip install -r scripts/requirements.txt
 ```
 
-### 3️ Run the application
+### 3️. Run the application
 ```bash
 python scripts/app.py
 ```
 
-### 4️ Open in browser
+### 4️. Open in browser
 ```
 http://127.0.0.1:5000/
 ```
